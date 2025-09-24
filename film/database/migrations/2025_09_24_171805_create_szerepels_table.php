@@ -14,8 +14,8 @@ return new class extends Migration
     {
         Schema::create('szerepels', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('film_id')->references('')->on('');
-            $table->foreignId('');
+            $table->foreignId('film_id')->constrained('films');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
 
